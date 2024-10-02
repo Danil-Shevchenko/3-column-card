@@ -1,0 +1,145 @@
+@font-face {
+    font-family: BigShouldersDisplay;
+    src: url(fonts/Big_Shoulders_Display/BigShouldersDisplay-VariableFont_wght.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: LexendDeca;
+    src: url(fonts/Lexend_Deca/LexendDeca-VariableFont_wght.ttf);
+    font-display: swap;
+}
+
+:root{
+    /* ## Colors */
+
+    /* ### Primary */
+
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* ### Neutral */
+
+    --Transparent-white : hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
+    --Very-light-gray : hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--Very-light-gray);
+    font-family: LexendDeca;
+    font-weight: 400;
+}
+
+.card{
+    display: flex;
+    width: 920px;
+    height: 500px;
+    
+}
+
+.card > section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 45px;
+}
+
+.card__sedans .card__more {
+    color: var(--Bright-orange); /* Текст цвета фона Sedans */
+}
+
+.card__suvs .card__more {
+    color: var(--Dark-cyan); /* Текст цвета фона SUVs */
+}
+
+.card__luxury .card__more {
+    color: var(--Very-dark-cyan); /* Текст цвета фона Luxury */
+}
+
+.card__sedans {
+    background-color: var(--Bright-orange);
+    border-radius: 10px 0 0 10px;
+}
+
+.card__suvs {
+    background-color: var(--Dark-cyan);
+}
+
+.card__luxury {
+    background-color: var(--Very-dark-cyan);
+    border-radius: 0 10px 10px 0;
+}
+
+.card__image {
+    width: 65px;
+
+}
+.card__class {
+    font-family: BigShouldersDisplay;
+    font-weight: 700;
+    color: var(--Very-light-gray);
+    text-transform: uppercase;
+    font-size: 36px;
+}
+.card__description {
+    line-height: 1.5;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--Transparent-white);
+    padding-bottom: 50px;
+}
+.card__more {
+    border: none;
+    height: 50px;
+    border-radius: 30px;
+    width: 80%;
+    font-family: LexendDeca;
+    background-color: var(--Very-light-gray);
+}
+
+.card__more:hover {
+    border: 3px solid var(--Very-light-gray);
+    background-color: transparent;
+    color: var(--Very-light-gray);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 950px) {
+    
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .card__sedans {
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .card__luxury {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .card > section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 45px;
+    }
+    
+    .card__class {
+        padding: 15px 0 15px 0;
+    }
+}
